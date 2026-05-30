@@ -1,0 +1,5 @@
+# Default: normaliza a LF en el repo, checkout según el SO
+* text=auto
+
+# El hook de git DEBE tener LF (es un script sh)
+.githooks/* text eol=lf

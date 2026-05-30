@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+.astro/
+.turbo/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+.drizzle/
+
+# CodeGraph index (se regenera con el hook post-commit)
+.codegraph/
+
+# Claude Code local config
+.claude/settings.local.json
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.suo
+.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Test coverage
+coverage/

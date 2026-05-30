@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# Actualiza el índice de CodeGraph tras cada commit.
+# Si codegraph no está instalado o falla, no bloquea el commit.
+if command -v codegraph > /dev/null 2>&1; then
+  codegraph init -i || true
+fi
