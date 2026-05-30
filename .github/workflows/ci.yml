@@ -11,6 +11,9 @@ jobs:
     name: Lint · Typecheck · Test · Build
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TELEMETRY_DISABLED: 1
+
     steps:
       - uses: actions/checkout@v4
 
@@ -22,6 +25,13 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
+
+      - name: Restore Turborepo cache
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-${{ runner.os }}-
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

@@ -10,19 +10,19 @@
 
 ## E0 — Cimientos del proyecto
 
-### T001 · Crear el monorepo
+### T001 · Crear el monorepo ✅
 Inicializa `cms-core` con pnpm workspaces y Turborepo.
 - **Criterios:** `pnpm install` funciona; existen `packages/{shared,api,sdk,editor}`; `pnpm turbo run build` no falla (aunque no haga nada aún); `tsconfig.base.json` compartido.
 - **Depende de:** —
 - **Estimación:** 1 j/d
 
-### T002 · Configurar TypeScript, lint y formato
+### T002 · Configurar TypeScript, lint y formato ✅
 ESLint + Prettier + tsconfig estricto en todos los paquetes.
 - **Criterios:** `pnpm lint` y `pnpm typecheck` pasan en verde; `strict: true` activado; un commit con error de tipo falla en CI.
 - **Depende de:** T001
 - **Estimación:** 1 j/d
 
-### T003 · CI básica (GitHub Actions)
+### T003 · CI básica (GitHub Actions) ✅
 Pipeline que instala, lintea, typechecks y testea en cada PR.
 - **Criterios:** un PR muestra los checks; Turbo cachea entre jobs; un fallo de lint bloquea el merge.
 - **Depende de:** T002
